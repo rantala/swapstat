@@ -1,0 +1,19 @@
+Source: swapstat
+Section: user/utilities
+Priority: extra
+Maintainer: Tommi Rantala <tt.rantala@gmail.com>
+Build-Depends: debhelper (>= 7), libqt4-dev, pkg-config
+Standards-Version: 3.9.1
+
+Package: swapstat
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, qt-components, applauncherd-single-instance
+Description: ......
+ ...
+
+Package: swapstat-dbg
+Section: debug
+Architecture: any
+Depends: ${misc:Depends}, swapstat (= ${binary:Version})
+Description: debugging symbols for swapstat
+ Contains the debugging information for the swapstat package.

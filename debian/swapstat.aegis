@@ -1,0 +1,7 @@
+<aegis>
+   <request policy="setxid">
+     <!-- <credential name="GRP::disk" />-->
+     <credential name="UID::root" />
+     <for path="/opt/rantala-swapstat/swapstat" />
+   </request>
+</aegis>

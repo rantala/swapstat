@@ -1,0 +1,42 @@
+#!/usr/bin/make -f
+#export DH_VERBOSE=1
+
+.PHONY: override_dh_strip
+
+.PHONY: override_dh_installexamples
+.PHONY: override_dh_installman
+.PHONY: override_dh_installcatalogs
+.PHONY: override_dh_installcron
+.PHONY: override_dh_installdebconf
+.PHONY: override_dh_installemacsen
+.PHONY: override_dh_installifupdown
+.PHONY: override_dh_installinfo
+.PHONY: override_dh_installinit
+.PHONY: override_dh_installmenu
+.PHONY: override_dh_installmime
+.PHONY: override_dh_installmodules
+.PHONY: override_dh_installlogcheck
+.PHONY: override_dh_installlogrotate
+.PHONY: override_dh_installpam
+.PHONY: override_dh_installppp
+.PHONY: override_dh_installudev
+.PHONY: override_dh_installwm
+.PHONY: override_dh_installxfonts
+.PHONY: override_dh_bugfiles
+.PHONY: override_dh_lintian
+.PHONY: override_dh_gconf
+
+override_dh_strip:
+	dh_strip --dbg-package=swapstat-dbg
+
+override_dh_auto_build:
+	./pre-generate.sh || exit 1
+	./translations-generate.sh || exit 1
+	dh_auto_build
+
+override_dh_builddeb:
+	dh_builddeb
+	aegis-deb-add -control debian/swapstat/DEBIAN/control .. debian/swapstat.aegis=_aegis
+
+%:
+	dh $@ --parallel

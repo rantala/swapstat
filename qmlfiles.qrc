@@ -1,0 +1,10 @@
+<RCC>
+	<qresource prefix="/">
+		<file>qmldir/main.qml</file>
+		<file>qmldir/MainPage.qml</file>
+		<file>qmldir/Header.qml</file>
+		<file>qmldir/ZBasicTab.qml</file>
+		<file>qmldir/ZDetailedStatisticsTab.qml</file>
+		<file>qmldir/HelpPage.qml</file>
+	</qresource>
+</RCC>
